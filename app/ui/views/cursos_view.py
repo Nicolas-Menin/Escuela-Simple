@@ -98,6 +98,9 @@ class FrameCurso(ctk.CTkFrame):
         self.tabla_cursos.bind("<<TreeviewSelect>>",self._llenar_entradas)
         self.bind("<Button-1>",lambda e: self.calendario.place_forget())
 
+
+
+
     def arbol_cursos(self,columnas):
         """Crea la tabla donde se muestran los cursos"""
         self.tabla_cursos = ttk.Treeview(self,columns=columnas,

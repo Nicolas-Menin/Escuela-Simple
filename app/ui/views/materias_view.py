@@ -85,6 +85,9 @@ class FrameMateria(ctk.CTkFrame):
         self._cargar_materias()
         self.tabla_materias.bind("<<TreeviewSelect>>",self._llenar_entradas)
 
+
+
+
     def _vaciar_entradas(self):
         """Limpia los campos de entrada"""
         for entrada in self.listas_entrada:

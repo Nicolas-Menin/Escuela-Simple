@@ -196,6 +196,7 @@ class FrameAlumnos(ctk.CTkFrame):
 
     def _cargar_alumnos(self,alumnos):
         """Recorre la lista y los carga en la tabla"""
+
         for alumno in alumnos:
             self.tabla_alumnos.insert("","end",values=(
                 alumno["id_alumno"],

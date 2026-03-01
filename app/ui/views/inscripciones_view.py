@@ -112,6 +112,19 @@ class FrameInscripciones(ctk.CTkFrame):
         self.bind("<Button-1>", lambda e: self.calendario.place_forget())
         self.tabla_inscripciones.bind("<<TreeviewSelect>>",self._llenar_campos)
 
+
+    def vaciar_tabla(self):
+
+        for i in self.tabla_inscripciones.get_children():
+
+            self.tabla_inscripciones.delete(i)
+
+    def cargar_datos(self):
+        self.vaciar_tabla()
+        self.listar_inscripciones()
+        self.cargar_alumnos()
+        self.cargar_cursos()
+
     def _llenar_campos(self,evento):
         """Llena los campos con los datos de la inscripción seleccionada"""
         seleccion = self.tabla_inscripciones.selection()
@@ -160,6 +173,8 @@ class FrameInscripciones(ctk.CTkFrame):
 
         self.tabla_inscripciones.column("#0",minwidth=0,width=0,stretch=False)
         self.tabla_inscripciones.place(x=1030,y=200)
+
+
 
     def cargar_alumnos(self):
         """Carga alumnos en el combobox"""

@@ -96,6 +96,8 @@ class FrameDocente(ctk.CTkFrame):
         self.tabla_docentes.bind("<<TreeviewSelect>>",self._llenar_entradas)
         self._cargar_arbol_docentes()
 
+
+
     def arbol_docentes(self,columnas):
         """Crea la tabla donde se muestran los docentes"""
         self.tabla_docentes = ttk.Treeview(self,columns=columnas,

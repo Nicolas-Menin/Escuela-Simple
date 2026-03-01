@@ -86,6 +86,19 @@ class FrameCursoMateria(ctk.CTkFrame):
 
         self.tabla_curso_materias.bind("<<TreeviewSelect>>",self._llenar_cbox)
 
+    def vaciar_tabla(self):
+
+        for i in self.tabla_curso_materias.get_children():
+
+            self.tabla_curso_materias.delete(i)
+
+    def cargar_datos(self):
+        self.vaciar_tabla()
+        self._cargar_cursos_materias()
+        self.cargar_materias()
+        self.cargar_docentes()
+        self.cargar_cursos()
+
 
     def _llenar_cbox(self,evento):
         """Llena los combobox con los datos de la fila seleccionada"""
